@@ -1,6 +1,19 @@
 @import '../config/variables';
 
 body {
-    background: $black;
-    color: $white;
+    
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.mapcontent {
+    width: 40%;
+}
+
+.tablecontent {
+    width: 40%;
 }

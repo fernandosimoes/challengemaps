@@ -2,25 +2,23 @@ import React, { Component } from 'react';
 import ReactDom from "react-dom";
 
 import './scss';
+import './images';
 
-import Map from "./components/maps/Map";
-
+import Map from "./components/Map";
+import Table from './components/Table';
+import Header from './components/Header';
 
 
 
 class App extends Component {
     render() {
-        console.log('render')
         return (
             <div>
-                Olá mundo
-                <Map
-                    isMarkerShown
-                    // googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-                    loadingElement={<div style={{ height: `100%` }} />}
-                    containerElement={<div style={{ height: `400px` }} />}
-                    mapElement={<div style={{ height: `100%` }} />}
-                />
+                <Header />
+                <section className="content">
+                    <Table />
+                    <Map />
+                </section>
             </div>
         );
     }

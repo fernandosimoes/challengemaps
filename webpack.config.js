@@ -37,11 +37,15 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        loader: 'file-loader',
-        options: {
-          name: '/assets/img/[name].[ext]',
-          context: ''
-        }
+        use:[
+          {
+            loader: 'url-loader',
+            options: {
+              fallback: 'file-loader',
+              limit: 8192
+            }
+          }
+        ]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,

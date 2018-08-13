@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class Map extends Component {
+class Table extends Component {
     render() {
         return (
-            <div>
-                Map
+            <div className="tablecontent">
+                
             </div>
         );
     }
 }
 
-export default Map;
+export default Table;
