@@ -1,0 +1,14 @@
+.pagination {
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    &.next {
+    }
+
+    &.back {
+    }
+  }
+}

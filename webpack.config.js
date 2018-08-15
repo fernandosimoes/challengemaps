@@ -3,9 +3,9 @@ const path = require('path');
 const webpack = require('webpack');
 
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   mode: devmode ? 'development' : 'production',
@@ -15,11 +15,12 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: "style.css",
+    new ExtractTextPlugin({
+      filename: __dirname + '/style.css',
+      disable: true,
+      allChunks: true
     }),
+    
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     })
@@ -28,12 +29,10 @@ module.exports = {
     rules: [
       {
         test: /\.s?[ca]ss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          // 'style-loader', //adiciona css na dom injetango a tag style
-          'css-loader', // interpetra os importas e as urls para imagems referenciadas em arquivos css
-          'sass-loader'
-        ]
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader']
+        })
       },
       {
         test: /\.(png|svg|jpg|gif)$/,

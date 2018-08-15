@@ -1,34 +1,12 @@
 import React, { Component } from 'react';
 import ReactDom from "react-dom";
+import App from './js/App'
+// redux dependencias
+import { Provider } from 'react-redux';
+import store from './js/reducers';
 
-import './scss';
-import './images';
-
-import {MapComponent} from "./components/Map";
-import Table from './components/Table';
-import Filters from './components/Filters';
-import Header from './components/Header';
-
-console.log('MapComponent', MapComponent)
-
-class App extends Component {
-    render() {
-        return (
-            <div>
-                <Header />
-                <section className="content">
-                    <Filters />
-                </section>
-                <section className="content">
-                    <Table />
-                    <MapComponent />
-                </section>
-            </div>
-        );
-    }
-}
-
-export default App;
-
-
-ReactDom.render(<App />, document.querySelector('#app'));
+ReactDom.render(
+    <Provider store={store()} >
+        <App />
+    </Provider>,
+document.querySelector('#app'));

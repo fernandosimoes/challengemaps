@@ -2,8 +2,6 @@
     width: 40%;
 }
 
-
-
 .minimal--value {
     border-radius: 5px;
     color: $gray;
@@ -12,7 +10,7 @@
     text-align: right;
     width: 320px;
     padding: 0 15px;
-    font-size: 20px; 
+    font-size: 20px;
     &::placeholder {
         color: $lightgray;
     }
