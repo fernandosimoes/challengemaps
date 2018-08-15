@@ -4,11 +4,12 @@ import ReactDom from "react-dom";
 import './scss';
 import './images';
 
-import Map from "./components/Map";
+import {MapComponent} from "./components/Map";
 import Table from './components/Table';
+import Filters from './components/Filters';
 import Header from './components/Header';
 
-
+console.log('MapComponent', MapComponent)
 
 class App extends Component {
     render() {
@@ -16,8 +17,11 @@ class App extends Component {
             <div>
                 <Header />
                 <section className="content">
+                    <Filters />
+                </section>
+                <section className="content">
                     <Table />
-                    <Map />
+                    <MapComponent />
                 </section>
             </div>
         );
