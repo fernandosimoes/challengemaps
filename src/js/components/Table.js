@@ -3,8 +3,7 @@ import Pagination from "./Pagination";
 
 import { changepage, sorteValue, sorteByName } from "../actions/lojasaction";
 import { connect } from 'react-redux';
-
-
+import CurrencyFormat from 'react-currency-format';
 
 class TableComponent extends Component {
 
@@ -24,10 +23,10 @@ class TableComponent extends Component {
             return false;
         }
         this.props.changepage(page);
-        
+
     }
     orderByName() {
-        
+
         if (this.state.directionName == 'asc') {
             this.setState({ directionName: 'desc' })
         } else {
@@ -60,23 +59,23 @@ class TableComponent extends Component {
             <div className="tablecontent">
                 <div className="table">
                     <p className="line">
-                        <span className="lojaname" onClick={this.orderByName}>
+                        <a className="lojaname" onClick={this.orderByName}>
                             Loja
-                        </span>
-                        <span className="faturamento" onClick={this.orderByValue}>
+                        </a>
+                        <a className="faturamento" onClick={this.orderByValue}>
                             Faturamento
-                        </span>
+                        </a>
                     </p>
                     {this.props.splitedPages[this.props.currentPage].map((store, kstore)=>{
                         if (store.revenue < this.props.minimumvalue) {
                             return (<p key={kstore} className="line">
                                 <span className="lojaname">{store.name}</span>
-                                <span className="faturamento low">{store.revenue}</span>
+                                <span className="faturamento low">{<CurrencyFormat value={store.revenue} displayType={'text'} thousandSeparator={true} prefix={'R$ '} />}</span>
                             </p>)
                         } else {
                             return (<p key={kstore} className="line">
                                 <span className="lojaname">{store.name}</span>
-                                <span className="faturamento">{store.revenue}</span>
+                                <span className="faturamento">{<CurrencyFormat value={store.revenue} displayType={'text'} thousandSeparator={true} prefix={'R$ '} />}</span>
                             </p>)
                         }
 
@@ -86,11 +85,12 @@ class TableComponent extends Component {
             </div>
         );
     }
+    componentDidMount() {
+    }
 }
 
 
 const mapStateToProps = (state, ownProps) => {
-    console.log(state)
     return {
         lojas: state.lojas,
         todaslojas: state.todaslojas,

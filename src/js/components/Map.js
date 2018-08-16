@@ -8,8 +8,6 @@ import redmarker from  "../../assets/images/marker-red.png";
 import bluemarker from  "../../assets/images/marker-blue.png";
 
 const style = {
-    width: '600px',
-    height: '600px',
     position: 'relative'
 }
 
@@ -21,15 +19,27 @@ class CustomMap extends Component {
             showingInfoWindow: false,
             activeMarker: {},
             selectedPlace: {},
+            allStore: true,
         };
         this.includeMarkers = this.includeMarkers.bind(this);
         this.onMarkerClick = this.onMarkerClick.bind(this);
         this.onMapClicked = this.onMapClicked.bind(this);
         this.changeMinimalValue = this.changeMinimalValue.bind(this);
+        this.justShowStorespage = this.justShowStorespage.bind(this);
     }
 
+    justShowStorespage() {
+        if(this.state.allStore) {
+            this.setState({
+                allStore: false
+            })
+        } else {
+            this.setState({
+                allStore: true
+            })
+        }
+    }
     changeMinimalValue(e) {
-        // console.log(Number(e.target.value) == NaN);
         if (Number(e.target.value) !== "NaN") {
             this.setState({
                 minimalvalue: e.target.value,
@@ -39,7 +49,7 @@ class CustomMap extends Component {
             this.setState({
                 errorvalue: true
             })
-            
+
         }
     }
 
@@ -66,10 +76,10 @@ class CustomMap extends Component {
         return lojas.map((store, key)=> {
             if (store.revenue < this.props.faturamentoMinimo) {
                 return (
-                <Marker 
-                    key={key} 
+                <Marker
+                    key={key}
                     onClick={this.onMarkerClick}
-                    name={store.name} 
+                    name={store.name}
                     position={{ lat: store.latitude, lng: store.longitude }}
                     icon={{
                         url: redmarker,
@@ -95,41 +105,38 @@ class CustomMap extends Component {
         })
     }
 
+    shouldComponentUpdate (nextProps, nextState){
+        // if (this.props.pagesonmap != nextProps.pagesonmap && nextProps.filter) {
+            // }
+            // return false;
+                return true;
+    };
+
     render() {
-        console.log('mapcomponent render', this.props.lojas);
         const errorclass = this.state.errorvalue === false ? 'hide' : 'show';
         return (
             <div className="mapcontent">
-                <div className="mapa">
-                    <Map 
-                        google={this.props.google}
-                        zoom={12}
-                        containerStyle={style}
-                        className=""
-                        initialCenter={{
-                            lat: -23.533773,
-                            lng: -46.625290
-                        }}
-                        >
-                        {/* {this.includeMarkers(this.props.splitedPages[this.props.currentPage])} */}
-                        {this.includeMarkers(this.props.lojas)}
-                        <InfoWindow
-                            marker={this.state.activeMarker}
-                            visible={this.state.showingInfoWindow}>
-                            <div>
-                                <h1>{this.state.selectedPlace.name}</h1>
-                            </div>
-                        </InfoWindow>
-                        {/* <Marker onClick={this.onMarkerClick}
-                            name={'Current location'} />
+                <Map
+                    google={this.props.google}
+                    zoom={12}
+                    containerStyle={style}
+                    className=""
+                    initialCenter={{
+                        lat: -23.533773,
+                        lng: -46.625290
+                    }}
+                    >
+                    {this.props.pagesonmap && this.includeMarkers(this.props.splitedPages[this.props.currentPage])}
 
-                        <InfoWindow onClose={this.onInfoWindowClose}>
-                            <div>
-                                <h1>{this.state.selectedPlace.name}</h1>
-                            </div>
-                        </InfoWindow> */}
-                    </Map>
-                </div>
+                    {!this.props.pagesonmap && this.includeMarkers(this.props.lojas)}
+                    <InfoWindow
+                        marker={this.state.activeMarker}
+                        visible={this.state.showingInfoWindow}>
+                        <div>
+                            <h1>{this.state.selectedPlace.name}</h1>
+                        </div>
+                    </InfoWindow>
+                </Map>
             </div>
         );
     }
@@ -143,7 +150,9 @@ const mapStateToProps = (state, ownProps) => {
         lojas: state.lojas,
         currentPage: state.currentPage,
         splitedPages: state.splitedPages,
-        faturamentoMinimo: state.minimumvalue
+        faturamentoMinimo: state.minimumvalue,
+        filter: state.filter,
+        pagesonmap: state.pagesonmap
     }
 }
 

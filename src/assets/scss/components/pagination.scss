@@ -5,10 +5,9 @@
     border: none;
     cursor: pointer;
 
-    &.next {
-    }
+    &.selected {
+      background-color: $lightgray;
 
-    &.back {
     }
   }
 }

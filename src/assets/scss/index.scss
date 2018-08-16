@@ -1,4 +1,6 @@
-@import './config/reset.scss';
+@import "~bulma";
+@import "./config/fonts";
+// @import './config/reset.scss';
 @import './config/vars';
 @import './config/defaulclasses';
 @import './components/header';

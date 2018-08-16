@@ -1,5 +1,68 @@
+%defaultinput {
+  border-radius: 5px;
+  color: $gray;
+  font-size: 20px;
+  height: 35px;
+  margin-bottom: 15px;
+  padding: 0 15px;
+  text-align: right;
+  width: 320px;
+
+  &::placeholder {
+    color: $lightgray;
+  }
+}
+
+.minimumvalue {
+  label {
+    font-family: $latobold
+  }
+}
+
+.minimumvalueinput {
+  @extend %defaultinput;
+}
+
+.searchinput {
+  @extend %defaultinput;
+  align-self: center;
+  text-align: left;
+  width: 100%;
+}
+
 .filters {
+  justify-content: space-between;
+  width: 100%;
+
+  .search {
+    align-items: center;
     display: flex;
-    justify-content: space-between;
     width: 100%;
+  }
+}
+
+.searchinput {
+  background: no-repeat 98% center;
+  margin-top: 28px;
+}
+
+.faturamentominimo {
+  align-items: center;
+  display: flex;
+  font-size: 18px;
+  justify-content: space-between;
+
+  label {
+    margin-bottom: 15px;
+  }
+
+  button {
+    margin-top: 10px;
+  }
+
+  span {
+    color: $red;
+    font-size: 12px;
+    margin: -15px 0 15px;
+  }
 }

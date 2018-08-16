@@ -1,4 +1,4 @@
-const devmode = process.env.NODE_ENV == 'production' ? false : true; 
+const devmode = process.env.NODE_ENV == 'production' ? false : true;
 const path = require('path');
 const webpack = require('webpack');
 
@@ -20,7 +20,7 @@ module.exports = {
       disable: true,
       allChunks: true
     }),
-    
+
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     })
@@ -38,22 +38,25 @@ module.exports = {
         test: /\.(png|svg|jpg|gif)$/,
         use:[
           {
-            loader: 'url-loader',
+            loader: 'file-loader',
             options: {
-              fallback: 'file-loader',
-              limit: 8192
+              outputPath: 'assets/images/',
+              publicPath: 'assets/images/'
             }
           }
         ]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]',
-          outputPath: 'fonts/',    // where the fonts will go
-          publicPath: '../'       // override the default path
-        }
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'assets/fonts/',
+              publicPath: 'assets/fonts/'
+            }
+          }
+        ]
       },
       {
         test: /\.js$/,
@@ -64,10 +67,11 @@ module.exports = {
       }
     ]
   },
-  
+
   devtool: 'source-map',
   devServer: {
     contentBase: '/dist/',
-    port: 9000
+    port: 9000,
+    historyApiFallback: true,
   }
 };

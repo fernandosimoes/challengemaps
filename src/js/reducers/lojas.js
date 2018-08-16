@@ -1,11 +1,21 @@
-import { GET_STORE_SUCCESS, CHANGE_PAGE, CHANGE_MINIMUM_VALUE, FILTER_STORES, SORTED_TABLE_VALUE, SORTED_TABLE_BY_NAME } from '../actionstypes';
+import {
+  GET_STORE_SUCCESS,
+  CHANGE_PAGE,
+  CHANGE_MINIMUM_VALUE,
+  FILTER_STORES,
+  SORTED_TABLE_VALUE,
+  SORTED_TABLE_BY_NAME,
+  FILTER_STORES_ON_MAP
+} from '../actionstypes';
 
 const initialState = {
   todaslojas: [],
+  filtro: '',
   lojas: [],
   splitedPages: [],
   currentPage: 0,
-  minimumvalue: 15000
+  minimumvalue: 15000.00,
+  pagesonmap: false
 }
 
 export default (state = initialState, action) => {
@@ -16,13 +26,28 @@ export default (state = initialState, action) => {
     case CHANGE_PAGE:
       return { ...state, currentPage: action.payload};
     case CHANGE_MINIMUM_VALUE:
-    console.log('aqui')
+      if(action.payload == "" ) {
+        return { ...state, minimumvalue: 15000.00};
+      }
       return { ...state, minimumvalue: action.payload};
     case FILTER_STORES:
+      if(action.payload == "") {
+        return { ...state, lojas: state.todaslojas, filtro: '', splitedPages: splitPages(state.todaslojas)};
+      }
 
-      return { ...state, lojas: action.payload, splitedPages: splitPages(action.payload)};
+      const filtredStores = state.todaslojas.filter(function (elem, index, array) {
+        if (String(elem.name).toLowerCase().includes(action.payload)) {
+            return elem
+        }
+      });
+
+      if(!filtredStores.length) {
+        return { ...state, lojas: [], filtro: action.payload};
+      }
+      return { ...state, lojas: filtredStores, filtro: action.payload, splitedPages: splitPages(filtredStores)};
+    case FILTER_STORES_ON_MAP:
+      return { ...state, pagesonmap: action.payload};
     case SORTED_TABLE_VALUE:
-
       return { ...state, lojas: action.payload, splitedPages: splitPages(action.payload)};
     case SORTED_TABLE_BY_NAME:
       return { ...state, lojas: action.payload, splitedPages: splitPages(action.payload)};
