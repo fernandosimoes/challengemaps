@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Map component 1`] = `
+<div
+  className="mapcontent"
+>
+  <div
+    className=""
+    style={
+      Object {
+        "height": "100%",
+        "position": "relative",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "bottom": 0,
+          "display": "inherit",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      Loading map...
+    </div>
+  </div>
+</div>
+`;

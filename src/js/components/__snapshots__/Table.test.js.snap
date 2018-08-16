@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter Component Render Component 1`] = `
+<div
+  className="tablecontent"
+>
+  <div
+    className="table"
+  >
+    <p
+      className="line"
+    >
+      <a
+        className="lojaname"
+        onClick={[Function]}
+      >
+        Loja
+      </a>
+      <a
+        className="faturamento"
+        onClick={[Function]}
+      >
+        Faturamento
+      </a>
+    </p>
+    <p
+      className="line"
+    >
+      <span
+        className="lojaname"
+      >
+        Alameda Santos
+      </span>
+      <span
+        className="faturamento"
+      >
+        <span>
+          R$ 29,854.12
+        </span>
+      </span>
+    </p>
+    <p
+      className="line"
+    >
+      <span
+        className="lojaname"
+      >
+        Av Paulista
+      </span>
+      <span
+        className="faturamento"
+      >
+        <span>
+          R$ 31,257.23
+        </span>
+      </span>
+    </p>
+    <p
+      className="line"
+    >
+      <span
+        className="lojaname"
+      >
+        Av Paulista Novo
+      </span>
+      <span
+        className="faturamento"
+      >
+        <span>
+          R$ 19,874.25
+        </span>
+      </span>
+    </p>
+    <p
+      className="line"
+    >
+      <span
+        className="lojaname"
+      >
+        Bandeirantes
+      </span>
+      <span
+        className="faturamento"
+      >
+        <span>
+          R$ 21,587.33
+        </span>
+      </span>
+    </p>
+    <p
+      className="line"
+    >
+      <span
+        className="lojaname"
+      >
+        Barão do Triunfo
+      </span>
+      <span
+        className="faturamento low"
+      >
+        <span>
+          R$ 12,569.95
+        </span>
+      </span>
+    </p>
+    <p
+      className="line"
+    >
+      <span
+        className="lojaname"
+      >
+        Bela Vista
+      </span>
+      <span
+        className="faturamento"
+      >
+        <span>
+          R$ 22,365.54
+        </span>
+      </span>
+    </p>
+    <p
+      className="line"
+    >
+      <span
+        className="lojaname"
+      >
+        Brigadeiro Faria Lima
+      </span>
+      <span
+        className="faturamento"
+      >
+        <span>
+          R$ 17,988.36
+        </span>
+      </span>
+    </p>
+    <p
+      className="line"
+    >
+      <span
+        className="lojaname"
+      >
+        Brooklin
+      </span>
+      <span
+        className="faturamento low"
+      >
+        <span>
+          R$ 12,578.22
+        </span>
+      </span>
+    </p>
+    <p
+      className="line"
+    >
+      <span
+        className="lojaname"
+      >
+        Brooklin 2
+      </span>
+      <span
+        className="faturamento low"
+      >
+        <span>
+          R$ 12,589.27
+        </span>
+      </span>
+    </p>
+  </div>
+  <div
+    className="pagination"
+  >
+    <button
+      className="back"
+      onClick={[Function]}
+    >
+      <img
+        src=""
+      />
+    </button>
+    <button
+      className="pagenumber selected"
+      onClick={[Function]}
+    >
+      1
+    </button>
+    <button
+      className="next"
+      onClick={[Function]}
+    >
+      <img
+        src=""
+      />
+    </button>
+  </div>
+</div>
+`;

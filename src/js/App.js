@@ -5,12 +5,12 @@ import '../assets/scss';
 import "../assets/images"
 // import '../assets/images ';
 
-import {MapComponent} from "./components/Map";
-import TableComponent from './components/Table';
-import Filters from './components/Filters';
+import { MapComponent } from "./components/Map";
+import { Table } from './components/Table';
+import { Filters } from './components/Filters';
 import Header from './components/Header';
 
-import {getlojas, changepage, filterstores} from './actions/lojasaction'
+import { getlojas, changepage, filterstores } from './actions/lojasaction'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -30,7 +30,7 @@ class App extends Component {
                 <section className="container">
                     <div className="columns">
                         <div className="column">
-                            <TableComponent />
+                            <Table />
                         </div>
                         <div className="column">
                             <MapComponent />

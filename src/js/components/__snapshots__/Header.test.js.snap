@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link Header Render 1`] = `
+<div
+  className="header"
+>
+  <div
+    className="container"
+  >
+    <h1>
+      Desempenho das lojas
+    </h1>
+  </div>
+</div>
+`;

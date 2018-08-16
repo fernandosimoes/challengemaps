@@ -9,7 +9,7 @@ const stylebgsearch = {
 }
 
 
-class Filters extends Component {
+class FiltersComponent extends Component {
     constructor(props) {
         super(props);
         this.filterprice = this.filterprice.bind(this)
@@ -78,5 +78,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Filters)
+const Filters = connect(mapStateToProps, mapDispatchToProps)(FiltersComponent)
+export {Filters, FiltersComponent};
+
 // export default Filters;

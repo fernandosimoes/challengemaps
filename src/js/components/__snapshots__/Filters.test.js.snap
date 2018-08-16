@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filters 1`] = `
+<div
+  className="filter"
+>
+  <div
+    className="columns inputs"
+  >
+    <div
+      className="column search"
+    >
+      <input
+        className="searchinput"
+        onChange={[Function]}
+        placeholder="Pesquisa"
+        style={
+          Object {
+            "backgroundImage": "url()",
+          }
+        }
+        type="text"
+      />
+    </div>
+    <div
+      className="column faturamentominimo"
+    >
+      <div
+        className="minimumvalue"
+      >
+        <label
+          htmlFor=""
+        >
+          Faturamento minimo esperado
+        </label>
+        <br />
+        <input
+          className="minimumvalueinput"
+          onChange={[Function]}
+          type="text"
+        />
+      </div>
+      <button
+        className="button"
+        onClick={[Function]}
+      >
+        Mostrar apenas lojas da tabela
+      </button>
+    </div>
+  </div>
+</div>
+`;

@@ -109,5 +109,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TableComponent)
+const Table = connect(mapStateToProps, mapDispatchToProps)(TableComponent);
+
+export {Table, TableComponent}
 // export default Filters;

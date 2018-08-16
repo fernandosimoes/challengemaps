@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination 1`] = `
+<div
+  className="pagination"
+>
+  <button
+    className="back"
+    onClick={[Function]}
+  >
+    <img
+      src=""
+    />
+  </button>
+  <button
+    className="pagenumber selected"
+    onClick={[Function]}
+  >
+    1
+  </button>
+  <button
+    className="pagenumber"
+    onClick={[Function]}
+  >
+    2
+  </button>
+  <button
+    className="pagenumber"
+    onClick={[Function]}
+  >
+    3
+  </button>
+  <button
+    className="pagenumber"
+    onClick={[Function]}
+  >
+    4
+  </button>
+  <button
+    className="pagenumber"
+    onClick={[Function]}
+  >
+    5
+  </button>
+  <button
+    className="pagenumber"
+    onClick={[Function]}
+  >
+    6
+  </button>
+  <button
+    className="pagenumber"
+    onClick={[Function]}
+  >
+    7
+  </button>
+  <button
+    className="pagenumber"
+    onClick={[Function]}
+  >
+    8
+  </button>
+  <button
+    className="pagenumber"
+    onClick={[Function]}
+  >
+    9
+  </button>
+  <button
+    className="pagenumber"
+    onClick={[Function]}
+  >
+    10
+  </button>
+  <button
+    className="next"
+    onClick={[Function]}
+  >
+    <img
+      src=""
+    />
+  </button>
+</div>
+`;

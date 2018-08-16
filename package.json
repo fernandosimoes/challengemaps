@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "bulma": "^0.7.1",
+    "chai": "^4.1.2",
     "google-maps-react": "^2.0.2",
     "react-currency-format": "^1.0.0"
   },

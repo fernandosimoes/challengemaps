@@ -17,6 +17,7 @@ para executar esse projeto, fa√ßa o clone ou download do mesmo e siga as instru√
 
 * `yarn` ou `npm i`.
 * `yarn start` ou `npm run start`.
+* `yarn test` ou `npm run test` para executar o teste de render dos components.
 
 **Routing** funciona com dois parametros por pagina da tabela **ou** por nome da loja, exemplo:
 
