@@ -30,7 +30,7 @@ const mockStore = configureMockStore(middlewares);
 
 
 
-import {allstores, splitedPages} from './fakedata';
+import {allstores, splitedPages} from '../fakedata';
 
 import lojasreducer from '../src/js/reducers/lojas';
 
