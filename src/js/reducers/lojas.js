@@ -34,13 +34,11 @@ export default (state = initialState, action) => {
       if(action.payload == "") {
         return { ...state, lojas: state.todaslojas, filtro: '', splitedPages: splitPages(state.todaslojas)};
       }
-
       const filtredStores = state.todaslojas.filter(function (elem, index, array) {
-        if (String(elem.name).toLowerCase().includes(action.payload)) {
+        if (String(elem.name).toLowerCase().includes(action.payload.toLowerCase())) {
             return elem
         }
       });
-
       if(!filtredStores.length) {
         return { ...state, lojas: [], filtro: action.payload};
       }

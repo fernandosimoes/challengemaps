@@ -1,12 +1,13 @@
 import React from 'react';
-import Pagination from './Pagination';
+import Header from '../src/js/components/Header';
 import renderer from 'react-test-renderer';
 
-test('Pagination', () => {
+test('Link Header Render', () => {
 
     let component = renderer.create(
-        <Pagination changepage={()=>{}} currentPage={0} totalPages={10} />
-    )
+        <Header />,
+    );
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-})
+});
+

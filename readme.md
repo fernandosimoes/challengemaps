@@ -8,8 +8,12 @@
 * Faturamento mínimo esperado:​ O valor default desse campo é 15.000,00. As alterações neste campo devem refletir na listagem e no mapa. [x]
 * [opcional]​ Permitir reordenar a listagem pelas colunas. [x]
 * [opcional]​ Usar mecanismos de ​routing​ na paginação e filtro. [x]
+  * Routing funciona com dois parametros por pagina da tabela **ou** por nome da loja, exemplo:
+  * localhost:9000/**page1**
+  * localhost:9000/**moema**
 
-**Sugestao de filtro incluida**: filtrar no mapa apenas lojas da pagina, ou todas as lojas retornadas.
+
+
 
 ## Execução
 
@@ -19,7 +23,10 @@ para executar esse projeto, faça o clone ou download do mesmo e siga as instru�
 * `yarn start` ou `npm run start`.
 * `yarn test` ou `npm run test` para executar o teste de render dos components.
 
-**Routing** funciona com dois parametros por pagina da tabela **ou** por nome da loja, exemplo:
 
-localhost:9000/**page1**
-localhost:9000/**moema**
+## Plus
+  * Filtro para mostrar apenas
+  * Alguns testes foram incluidos no projeto como:
+    * Teste de render dos components, matching com snapshots
+    * Teste de Interface no component table e interaçao do reordenação da lista, pegando alteraçao do estado local do componente.
+    * Teste de algumas actions e alteraçao do comportamento dentro do redux function.

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Filter Component Render Component 1`] = `
+exports[`Table Component Render Component 1`] = `
 <div
   className="tablecontent"
 >
@@ -184,6 +184,18 @@ exports[`Filter Component Render Component 1`] = `
       onClick={[Function]}
     >
       1
+    </button>
+    <button
+      className="pagenumber"
+      onClick={[Function]}
+    >
+      2
+    </button>
+    <button
+      className="pagenumber"
+      onClick={[Function]}
+    >
+      3
     </button>
     <button
       className="next"
